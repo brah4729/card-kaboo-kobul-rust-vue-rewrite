@@ -1,8 +1,9 @@
 # deps / build
 node_modules/
-.next/
-out/
-next-env.d.ts
+target/
+build/
+dist/
+.wrangler/
 *.tsbuildinfo
 
 # bun.lock is the lockfile. npm's is ignored so the two can never disagree.
@@ -13,9 +14,12 @@ yarn.lock
 .env
 .env.*
 !.env.example
+.dev.vars
 
 # misc
 .DS_Store
 *.log
 coverage/
-.vercel
+
+# browser automation scratch
+.playwright-mcp/

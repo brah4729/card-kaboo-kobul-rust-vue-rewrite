@@ -1,0 +1,21 @@
+[package]
+name = "kaboo-engine"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "Pure Kaboo game engine: no IO, no clock, no randomness of its own."
+
+[features]
+# Test support shared with the room crate's suites. Never enabled in the Worker.
+testkit = ["dep:serde_json"]
+
+[dependencies]
+serde.workspace = true
+serde_json = { workspace = true, optional = true }
+ts-rs.workspace = true
+
+[dev-dependencies]
+kaboo-engine = { path = ".", features = ["testkit"] }
+serde_json.workspace = true
+proptest = "1"

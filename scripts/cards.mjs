@@ -1,5 +1,5 @@
 /**
- * Regenerate `public/cards/*.png` from the public-domain source artwork.
+ * Regenerate `web/public/cards/*.png` from the public-domain source artwork.
  *
  *     bun scripts/cards.mjs            # rebuild every card
  *     bun scripts/cards.mjs QH AS      # rebuild two of them
@@ -39,7 +39,7 @@ const JOKERS = ['Joker1', 'Joker2'];
 
 const WIDTH = 264; // 3 x 88px, the widest a card gets in the UI
 const COLOURS = 128;
-const OUT = new URL('../public/cards/', import.meta.url);
+const OUT = new URL('../web/public/cards/', import.meta.url);
 
 const ALL = [...SUITS.flatMap((suit) => RANKS.map((rank) => `${rank}${suit}`)), ...JOKERS];
 

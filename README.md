@@ -8,10 +8,12 @@ This file explains how to play. For developer and agent documentation, see [`AGE
 
 ```bash
 bun install
-bun run dev        # http://localhost:3000
+bun run dev        # http://127.0.0.1:8787 — needs Rust (wasm32 target) and worker-build; see AGENTS.md §3
 ```
 
 One player creates a room and shares the **room code**. Everyone else opens the site on their own phone or computer, enters a name and the code, and the host starts the game. No accounts.
+
+The game runs on Cloudflare Workers: a Rust engine in one Durable Object per room, and a Vue app in front. Deploying needs a free Cloudflare account (`wrangler login`, then `wrangler secret put ROOM_SECRET` and `bun run deploy`).
 
 ---
 

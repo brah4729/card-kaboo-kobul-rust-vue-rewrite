@@ -1,0 +1,19 @@
+[package]
+name = "kaboo-worker"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+description = "The Cloudflare Worker: axum routes in front, one Durable Object per room behind."
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+kaboo-protocol.workspace = true
+kaboo-room.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+worker = { version = "0.8.7", features = ["http", "axum"] }
+axum = { version = "0.8.9", default-features = false }
+tower-service = "0.3"
